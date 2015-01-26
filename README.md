@@ -4,7 +4,7 @@
 A port of [Ben Lowry's](https://github.com/benlowry) [FGLAds Preloader Wrapper](https://github.com/benlowry/openfl-fglads-preloader) for OpenFL and AS3 to HaxeFlixel.
 
 ### Changes to the original version:
-Since the default HaxeFlixel preloader inherits from FlxPreloaderBase and not NMEPreloader (at least not directly) some changes were needed to make this custom preloader work out of the box. The only file that had to be changed was FGLPreloader.hx, which in this fork is replaced by FGLFlxPreloader.hx. The code for implementing it in the project's xml is also slightly different, but other than that, everything has been kept the same. Many thanks to Ben Lowry for his original work and doing all the heavy lifting! :D
+Since the default HaxeFlixel preloader inherits from FlxPreloaderBase and not NMEPreloader (at least not directly) some changes were needed to make this custom preloader work out of the box. The only file that had to be changed was FGLPreloader.hx, which in this fork is replaced by FGLFlxPreloader.hx. The code for implementing it in the project's xml is also slightly different, but other than that, everything has been kept the same including the available customization options; for help on this, please check the original repository [here](https://github.com/benlowry/openfl-fglads-preloader). Many thanks to Ben Lowry for his original work and doing all the heavy lifting! :D
 
 ### Features include:
 - attractive preloading bar
@@ -16,36 +16,6 @@ Copy the three FGL*.hx files into your project, and then in your project's xml f
 
     <app preloader="FGLFlxPreloader" />
 
-
-### Customization:
-Adjust any or all optional parameters including your FGL ad id in FGLFlxPreloader.hx or when
-instantiating the ActionScript FGLWrapper:
-
-	adid: "FGL-XXXXXXXX", // your FGL ad id
-    gametitle: "", // the name of your game
-    developer: "", // developer branding
-    developerlink: "", // developer link
-    onerror: adFinished,  // function(e:Event)
-    oncomplete: adFinished,  // function(e:Event)
-    custombackground: // optional displayobject to use as background
-    sponsor: "",     // sponsor's name
-    sponsorlink: "", // sponsor's url
-    background: 0x1C3755, // optional  background color
-    titletext: 0xFFFFFF, // color for the game name
-    titlebackground: 0x000000, // background color underlaying the game name
-    fgltext: 0xFFFFFF, // color for the 'ads by fgl'
-    fglbackground: 0x000000, // background color underlaying 'ads by fgl'
-    preloadertext: 0x999999, // preloader text color
-    preloaderbar: 0x253240, // preloader progress bar color
-    preloaderbackground: 0x000000, // preloader bar background color
-    adbackground: 0x000000, // ad box background
-    playbuttonbackground: 0x333333, // play button background
-    playbuttontext: 0xFFFFFF, // play button text color
-    playbuttonborder: 0xFFFFFF // play button border color
-
-### Example:
-![Loading](http://i.imgur.com/wSnBhf4.png)
-![Loaded](http://i.imgur.com/b0jmOJR.png)
 
 ### License:
 
