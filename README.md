@@ -1,26 +1,24 @@
-# FGLAds for OpenFL and AS3
+# FGLAds for HaxeFlixel
 ### With Mochi Media style preloader
 
-A preloader wrapper in AS3 and Haxe for the [FGLAds](http://fgl.com/) service for [OpenFL](http://openfl.org/).  Contains rich customization 
-to include your own game, developer and sponsor branding.
+A port of [Ben Lowry's](https://github.com/benlowry) [FGLAds Preloader Wrapper](https://github.com/benlowry/openfl-fglads-preloader) for OpenFL and AS3 to HaxeFlixel.
+
+### Changes to the original version:
+Since the default HaxeFlixel preloader inherits from FlxPreloaderBase and not NMEPreloader (at least not directly) some changes were needed to make this custom preloader work out of the box. The only file that had to be changed was FGLPreloader.hx, which in this fork is replaced by FGLFlxPreloader.hx. The code for implementing it in the project's xml is also slightly different, but other than that, everything has been kept the same. Many thanks to Ben Lowry for his original work and doing all the heavy lifting! :D
 
 ### Features include:
 - attractive preloading bar
 - preloading bar converts into play button after the game is finished loading *and* at least 15 seconds have passed
 - fully customizable appearance and behavior
 
-### Usage (Haxe):
-Copy the three FGL*.hx files into your project, and then in your project's xml file add the preloader:
+### Usage (HaxeFlixel):
+Copy the three FGL*.hx files into your project, and then in your project's xml file replace the default preloader with this one:
 
-    < preloader name="FGLPreloader" / >
+    <app preloader="FGLFlxPreloader" />
 
-## Usage (AS3)
-Copy the FGLWrapper.as file into your project and then add to your movie with:
-    
-    addChild(new FGLWrapper({ options });
 
 ### Customization:
-Adjust any or all optional parameters including your FGL ad id in Preloader.hx or when
+Adjust any or all optional parameters including your FGL ad id in FGLFlxPreloader.hx or when
 instantiating the ActionScript FGLWrapper:
 
 	adid: "FGL-XXXXXXXX", // your FGL ad id
@@ -53,7 +51,7 @@ instantiating the ActionScript FGLWrapper:
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Ben Lowry
+Copyright (c) 2014 Andrej Preradovic
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
